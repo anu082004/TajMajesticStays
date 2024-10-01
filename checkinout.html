@@ -1,0 +1,138 @@
+<html></html>
+
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+ 
+    
+    button {
+      background-color:blue;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+   .container-sm
+   {
+    width: 540px;
+   }  
+    
+ .h2
+ {
+    color: aliceblue;
+ }
+
+    </style>
+<header>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark fs-5">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                <h2 style="color: white;"> <img src="logo.png" width="60" height="50" alt="logo" class="d-inline-block"> Taj Majestic Stays</h2>
+            </a>
+        </div>
+    </nav>
+
+</header>
+
+<body>
+    <center>
+
+
+        <div style="background-image: url('hero-3.jpg'); background-size: cover ;height:90%;opacity:0.9;">
+
+
+
+            <div class="container-sm"  >
+               <br>
+                <div class="booking-form" >
+
+                    <h3>Booking Your Resort</h3>
+                    <form >
+                        <div class="check-date">
+                            <label for="date-in">Check In:</label>
+                            <input type="date" id="checkin" name="checkin" required>
+                            <i class="icon_calendar"></i>
+                        </div>
+                        <div class="check-date">
+                            <label for="date-out">Check Out:</label>
+                            <input type="date" id="checkout" name="checkout" required>
+                            <i class="icon_calendar"></i>
+                        </div>
+                        <a href="book.html" onclick="calculateDays()" class="btn btn-primary" role="button">Submit</a>
+                        
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+     
+      
+</body>
+
+</center>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded",function()
+    {
+        var today=new Date();
+         
+    // Get the year, month, and day in local time
+    var year = today.getFullYear();
+    var month = today.getMonth() + 1; // Months are 0-based, so we add 1
+    var day = today.getDate();
+
+    // Format month and day to always have two digits (e.g., 01, 09, etc.)
+    if (month < 10) month = '0' + month;
+    if (day < 10) day = '0' + day;
+
+    // Construct the date string in 'YYYY-MM-DD' format
+          var localToday = year + '-' + month + '-' + day;
+        document.getElementById("checkin").setAttribute('min',localToday);
+        document.getElementById("checkout").setAttribute('min',localToday);
+    }
+);
+</script>
+<script>
+    
+     function calculateDays() {
+            
+            const date1 = new Date(document.getElementById("checkin").value);
+            const date2 = new Date(document.getElementById("checkout").value);
+      
+            const diffTime = Math.abs(date2 - date1);
+
+            // Convert time difference from milliseconds to days
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+           localStorage.setItem("days",diffDays);
+        }
+
+
+</script>
+</html>

@@ -1,0 +1,86 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    input[type=text],
+    input[type=password],
+    input [type=email],
+    
+    input [type=time] {
+        width: 100%;
+        padding: 10px 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #3e367f;
+        
+        box-sizing: border-box;
+        
+    }
+
+    .container-sm {
+        width: 540px;
+        background-color: #ccc;
+        font-size: medium;
+        border: 2px solid #060608;
+    }
+</style>
+<header>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark fs-5">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                <h2 style="color: white;"> <img src="logo.png" width="60" height="50" alt="logo" class="d-inline-block"> Taj Majestic Stays</h2>
+            </a>
+
+    </nav>
+</header>
+
+<body>
+    <center>
+        <div style="background-image: url('hero-3.jpg'); background-size: cover ;height:90%;opacity:0.9;">
+            <form action="book.php" method="post" enctype="multipart/form-data">
+        <h3 class="text-center" style="color: white;">Booking Form</h3><br>
+        <div class="container-sm ">
+            <div class="form-group">
+                <form>
+                <label for="fullName"> Name</label>
+                <input type="text" class="form-control" name="a" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="address"> Address</label>
+                <input type="text" class="form-control" name="b" placeholder="Enter your address" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone no</label>
+                <input type="number" class="form-control" name="c" placeholder="Enter your phone number" required>
+            </div>
+                <div class="mb-3">
+                    <label for="image">Select image to upload:</label>
+                 <input type="file" name="image"  accept="image/*">
+            </div>
+            <a href="s.html" ><input type="submit"  name="submit" value="submit"></a>
+            
+            <br><br>
+            </form>
+
+
+</body>
+
+</center>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+
+</html>
